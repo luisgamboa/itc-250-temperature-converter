@@ -11,12 +11,15 @@ echo'
      <h2>Temperature Conversion</h2> 
      
      <form action = "' . THIS_PAGE . '" method = "GET"> 
-         Degrees: <input type = "text" name = "degree" size=4> 
+          
          <select name="temperatureType"> 
              <option value="celcius">Celsius</option> 
              <option value="fahrenheit">Fahrenheit</option> 
              <option value="kelvin">Kelvin</option> 
-        </select> 
+        </select>
+        <br />
+        <br />
+        Degrees: <input type = "text" name = "degree" size=4>
          <br/> 
          <br/> 
          <input type = "submit" name = "Convert" value="Convert"/> 
