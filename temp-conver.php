@@ -37,9 +37,10 @@ if (array_key_exists('degree',$_GET))
 	$firstLength = strlen($_GET['degree']);
 	
 	//it willcheck that input is not empty
+    
 	if(($firstLength > 0) && (is_numeric($_GET['degree'])))
 		{
-            if ($typeOfTemperature == "celcius") 
+            if ($typeOfTemperature == "celcius" and $degreeValue >=-273.15) 
                 {
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td>
                      $degreeValue</td><td>Celsius</td></tr>"; 
@@ -49,7 +50,7 @@ if (array_key_exists('degree',$_GET))
                      echo "<tr><td>$celciusToKelvin </td><td>Kelvin</td></tr>"; 
                 }
 
-            if ($typeOfTemperature == "fahrenheit") 
+            if ($typeOfTemperature == "fahrenheit" and $degreeValue >=-459.67) 
                 {
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td>
                      $degreeValue</td><td>Farhenheit</td></tr>"; 
@@ -59,7 +60,7 @@ if (array_key_exists('degree',$_GET))
                      echo "<tr><td>$fahrenheitToKelvin </td><td>Kelvin</td></tr>"; 
                 } 
 
-             if ($typeOfTemperature == "kelvin") 
+             if ($typeOfTemperature == "kelvin" and $degreeValue >=0) 
                 {
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td> 
                      $degreeValue</td><td>Kelvin</td></tr>"; 
@@ -68,7 +69,12 @@ if (array_key_exists('degree',$_GET))
                      $kelvinToCelcius = $degreeValue-273.15; 
                      echo "<tr><td>$kelvinToCelcius </td><td>Celsius</td></tr>"; 
                 } 
+        
+    //echo an error message if the temperature is below absolute zero 
+        else if (($typeOfTemperature == "kelvin" and $degreeValue <0) or ($typeOfTemperature == "fahrenheit" and $degreeValue < -459.67) or ($typeOfTemperature == "celcius" and $degreeValue < -273.15) ){
+		echo "<span style = \"color:red\">*Whoa man, you can't get lower than absolute zero. It's science! Enter the real temperature! </span>";}
 		 
+        
 	 }
 	 else
 		//echo an error message if input is empty
