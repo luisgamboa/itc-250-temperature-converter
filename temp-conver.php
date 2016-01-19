@@ -1,5 +1,5 @@
 <?php 
-//final version
+//semi-final version
 //temp-conver.php
 //The app will allow users to convert temperature types, 
 //for example Fahrenheit to Celcius, Celcius to Fahrenheit and Fahrenheit to Kelvin
