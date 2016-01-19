@@ -2,11 +2,9 @@
 //temp-conver.php
 //The app will allow users to convert temperature types, 
 //for example Fahrenheit to Celcius, Celcius to Fahrenheit and Fahrenheit to Kelvin
-
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 //echo THIS_PAGE;
 //die;
-
 echo' 
      <h2>Temperature Conversion</h2> 
      
@@ -26,11 +24,8 @@ echo'
      </form>
      
      ';
-
-
  //check for input from the user
 if (array_key_exists('degree',$_GET))
-
  {
 	$typeOfTemperature = $_GET['temperatureType'];
 	$degreeValue = $_GET['degree'];
@@ -49,7 +44,6 @@ if (array_key_exists('degree',$_GET))
                      $celciusToKelvin = $degreeValue+273.15; 
                      echo "<tr><td>$celciusToKelvin </td><td>Kelvin</td></tr>"; 
                 }
-
             if ($typeOfTemperature == "fahrenheit" and $degreeValue >=-459.67) 
                 {
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td>
@@ -59,7 +53,6 @@ if (array_key_exists('degree',$_GET))
                      $fahrenheitToKelvin = $fahrenheitToCelcius+273.15; 
                      echo "<tr><td>$fahrenheitToKelvin </td><td>Kelvin</td></tr>"; 
                 } 
-
              if ($typeOfTemperature == "kelvin" and $degreeValue >=0) 
                 {
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td> 
