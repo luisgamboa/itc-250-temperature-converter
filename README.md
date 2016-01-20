@@ -1,4 +1,4 @@
-# itc-172-temperature-converter
+# itc-250-temperature-converter
 
 For our first group project we'll be  building a PHP application that converts temperatures based on user input.
 
