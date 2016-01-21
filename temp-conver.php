@@ -4,7 +4,15 @@
 //for example Fahrenheit to Celcius, Celcius to Fahrenheit and Fahrenheit to Kelvin
 //January 21st, 2016
 
-header('Content-type: text/plain; charset=utf-8');
+echo'
+    <head>
+        <meta Content-type: text/plain>
+        <meta charset=utf-8>
+    </head>
+
+';
+
+
 
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 //echo THIS_PAGE;
