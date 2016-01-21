@@ -2,6 +2,9 @@
 //temp-conver.php
 //The app will allow users to convert temperature types, 
 //for example Fahrenheit to Celcius, Celcius to Fahrenheit and Fahrenheit to Kelvin
+//January 21st, 2016
+
+header('Content-type: text/plain; charset=utf-8');
 
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 //echo THIS_PAGE;
@@ -42,42 +45,57 @@ if (array_key_exists('degree',$_GET))
 		{
             if ($typeOfTemperature == "celcius" and $degreeValue >=-273.15) 
                 {
-                     echo "<table><tr><th> Conversion Results</th></tr><tr><td>
-                     $degreeValue</td><td>Celsius</td></tr>"; 
-                     $celciusToFahrenheit = $degreeValue*9/5+32; 
+                    // Celcius
+                    echo "<table><tr><th> Conversion Results</th></tr><tr><td>
+                    $degreeValue</td><td>Celsius</td></tr>";
+                
+                    //Convert to Fahrenheith
+                    $celciusToFahrenheit = $degreeValue*9/5+32; 
                     echo "<tr><td>";
-                     echo number_format($celciusToFahrenheit,2);
+                    echo number_format($celciusToFahrenheit,2);
                     echo " </td><td>Farenheit</td></tr>";
-                     $celciusToKelvin = $degreeValue+273.15; 
+                    
+                    //Convert to Kelvin
+                    $celciusToKelvin = $degreeValue+273.15; 
                     echo "<tr><td>";
-                     echo number_format($celciusToKelvin,2); 
+                    echo number_format($celciusToKelvin,2); 
                     echo " </td><td>Kelvin</td></tr>";
                 }
 
             if ($typeOfTemperature == "fahrenheit" and $degreeValue >=-459.67) 
                 {
+                     //Farhenheit
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td>
                      $degreeValue</td><td>Farhenheit</td></tr>"; 
+                     
+                     //Convert to Celcius
                      $fahrenheitToCelcius = ($degreeValue -32)*5/9; 
-                 echo "<tr><td>";
+                     echo "<tr><td>";
                      echo number_format($fahrenheitToCelcius,2); 
-                echo " </td><td>Celsius</td></tr>";
+                     echo " </td><td>Celsius</td></tr>";
+                     
+                     //Convert to Kelvin
                      $fahrenheitToKelvin = $fahrenheitToCelcius+273.15; 
-                    echo "<tr><td>";
+                     echo "<tr><td>";
                      echo number_format($fahrenheitToKelvin,2);
                      echo " </td><td>Kelvin</td></tr>";
                 } 
 
              if ($typeOfTemperature == "kelvin" and $degreeValue >=0) 
                 {
+                     //Kelvin
                      echo "<table><tr><th> Conversion Results</th></tr><tr><td> 
                      $degreeValue</td><td>Kelvin</td></tr>"; 
+                 
+                    //Convert to Fahrenheit
                      $kelvinToFahrenheit = ($degreeValue - 273.15) * 9 / 5 + 32; 
-                    echo "<tr><td>";
+                     echo "<tr><td>";
                      echo number_format($kelvinToFahrenheit,2); 
-                 echo " </td><td>Farenheit</td></tr>";
+                     echo " </td><td>Farenheit</td></tr>";
+                     
+                     //Convert to Celcius
                      $kelvinToCelcius = $degreeValue-273.15; 
-                        echo "<tr><td>";
+                     echo "<tr><td>";
                      echo number_format($kelvinToCelcius,2); 
                     echo " </td><td>Celsius</td></tr>";
                 } 
@@ -90,3 +108,4 @@ if (array_key_exists('degree',$_GET))
 		//echo an error message if input is empty
 		echo "<span style = \"color:red\">*Please enter a valid temperature value.</span>";
 }
+// php ending tag intentially omited
