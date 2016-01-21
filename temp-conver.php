@@ -4,13 +4,16 @@
 //for example Fahrenheit to Celcius, Celcius to Fahrenheit and Fahrenheit to Kelvin
 //January 21st, 2016
 
-header('Content-type: text/plain; charset=utf-8');
+//header('Content-type: text/plain; charset=utf-8');
 
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 //echo THIS_PAGE;
 //die;
 
 echo' 
+     <head>
+        <meta charset="utf-8">
+      </head>
      <h2>Temperature Conversion</h2> 
      
      <form action = "' . THIS_PAGE . '" method = "GET"> 
