@@ -12,13 +12,14 @@ echo'
 
 ';
 
-
-
 define('THIS_PAGE',basename($_SERVER['PHP_SELF']));
 //echo THIS_PAGE;
 //die;
 
 echo' 
+     <head>
+        <meta charset="utf-8">
+      </head>
      <h2>Temperature Conversion</h2> 
      
      <form action = "' . THIS_PAGE . '" method = "GET"> 
